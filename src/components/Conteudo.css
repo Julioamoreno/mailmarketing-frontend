@@ -1,0 +1,19 @@
+#conteudo{
+
+    /* margin-left: auto;
+    margin-right: auto; */
+    width: 600px;
+    height: 250px;
+    position: relative;
+    display: inline-block;
+    top: 0px;
+    padding-top: 0;
+    /* margin: 0px; */
+
+    align-items: center;
+}
+.mensagem{
+    margin-top: initial;
+    margin-left: 20%;
+    margin-right: auto;
+}
