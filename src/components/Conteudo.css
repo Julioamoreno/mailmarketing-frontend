@@ -1,19 +1,28 @@
 #conteudo{
-
-    /* margin-left: auto;
-    margin-right: auto; */
-    width: 600px;
-    height: 250px;
-    position: relative;
-    display: inline-block;
+    display: inline-grid;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 5;
     top: 0px;
     padding-top: 0;
-    /* margin: 0px; */
-
     align-items: center;
 }
-.mensagem{
-    margin-top: initial;
-    margin-left: 20%;
-    margin-right: auto;
+
+#conteudo .list-panel{
+    max-width: 1170px;
+
+}
+#conteudo .list-panel td{
+    font-size: 20px;
+    
+}
+#conteudo .list-panel td>a{
+    margin-left: 1vw;
+    
+}
+
+#conteudo .new-panel{
+    padding-left: 15vw;
+    padding-right: 15vw;
 }
