@@ -11,7 +11,7 @@ export default function Login(props) {
       
     const [email, setEmail] = useState(0);
     const [password, setPassword] = useState(0);
-    const [error, setError] = useState(0);
+    const [error, setError] = useState('');
 
     const { token ,setToken } = useToken();
       
