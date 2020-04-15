@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../App.css';
+import './Header.css';
 
 import { useToken } from '../context/token';
 
