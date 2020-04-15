@@ -1,0 +1,60 @@
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+#root{
+  display: grid;
+}
+
+body{
+  background-color: #fafafa;
+}
+
+#page{
+  display: inline;
+  min-height: 100vh;
+  flex-direction: column;
+
+}
+.row{
+  margin: 0;
+}
+
+main{
+  flex: 1 0 auto;
+}
+
+#content .row {
+  margin: 0;
+}
+.tooltip{
+  color: #212121;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px black; /* If you want dots under the hoverable text */
+}
+.tooltip:hover{
+  color: #afafaf;
+  background-color:#000;
+}
+.tooltip:hover .tooltiptext{
+  visibility: visible;
+  
+}
+.tooltiptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  top: 100%;
+  right: 0%;
+  margin-left: -60px;
+  
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
