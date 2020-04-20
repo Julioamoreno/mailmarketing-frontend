@@ -43,8 +43,7 @@ export default function CriarUsuario(props) {
                                         <div className="input-field col s12">
                                             <input
                                                 id="name"
-                                                type="text" 
-                                                v-model="user.name" 
+                                                type="text"  
                                                 className="validate"
                                                 onChange={e => setNome( e.target.value)}
                                             />
@@ -56,7 +55,6 @@ export default function CriarUsuario(props) {
                                             <input 
                                                 id="email" 
                                                 type="email" 
-                                                v-model="user.username" 
                                                 className="validate"
                                                 onChange={e=>setEmail( e.target.value )}
                                             />
@@ -68,7 +66,6 @@ export default function CriarUsuario(props) {
                                             <input 
                                                 id="account_name"
                                                 type="text" 
-                                                v-model="user.account_name" 
                                                 className="validate"
                                                 onChange={e=>setNomeConta(e.target.value)}
                                             />
@@ -80,7 +77,6 @@ export default function CriarUsuario(props) {
                                             <input
                                                 id="password"
                                                 type="password" 
-                                                v-model="user.password" 
                                                 className="validate"
                                                 onChange={e=>setPassword(e.target.value)}
                                             />
