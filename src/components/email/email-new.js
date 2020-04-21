@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import createCampaing from '../auth/email';
 
 export default function EmailNew(props) {
-
     const [titulo, setTitulo] = useState(0);
     const [conteudo, setConteudo] = useState(0);
     const [data, setData] = useState(0);
