@@ -1,0 +1,28 @@
+.linha{
+    padding-left: 10px;
+}
+.col{
+    padding-top: 10px;
+}
+.card .card-title {
+    padding-left: 10px;
+}
+.tabela{
+    padding-left: 10px;
+}
+.tabela .itens{
+    display: flex;
+    border-bottom: 1px solid #CCC;
+}
+.tabela .itens:focus{
+    background-color: rgb(163, 163, 163)
+}
+.tabela .itens .titulo{
+    font-weight: bolder;
+    width: 120px;
+    padding: 10px 0px;
+}
+.tabela .itens .conteudo{
+    padding: 10px 0px;
+    margin-left: 20px;
+}
