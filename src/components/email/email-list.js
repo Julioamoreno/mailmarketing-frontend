@@ -3,9 +3,6 @@ import { useHistory } from 'react-router-dom';
 
 import api from '../auth/api';
 
-import { listCampaing } from '../auth/email';
-// import { Container } from './styles';
-
 export default function Email () { 
   let history = useHistory();
   const [lists, setLists] = useState([]);
@@ -14,16 +11,23 @@ export default function Email () {
     async function fetchData() {
       const {data} = await api.get("/api/campaign");
       setLists(data);
-      console.log(data)
     }
 
     fetchData();
   },[history]);
 
-  async function listEmails (e) {
+  function verCampanha (id, e) {
+    e.preventDefault();
+    history.push(`/email/view/${id}`);
+  }
+  function editarCampanha (id, e) {
+    e.preventDefault();
 
-  
-
+    history.push(`/email/edit/${id}`);
+  }
+  function excluirCampanha (id, e) {
+    e.preventDefault();
+    history.push(`/email/remove/${id}`);
   }
   
   function emailnew (e){
@@ -48,7 +52,6 @@ export default function Email () {
                   <th>status</th>
                   <th>inicio</th>
                   <th>lista</th>
-                  {/* <th>{console.log(lists.data.title)}</th> */}
                 </tr>
               </thead>
               <tbody>
@@ -62,17 +65,26 @@ export default function Email () {
                     <td>{item.start}</td>
                     <td>{item.lists}</td>
                     <td>
-                      <a href="" className="btn">ver</a>
-                      <a href="" className="btn blue">editar</a>
-                      <a href="" className="btn red">remover</a>
+                      <a href="#" onClick={
+                        (event)=> verCampanha(item._id, event)
+                        } className="btn"
+                        >
+                          ver
+                      </a>
+                      <a href="#" onClick={
+                        (event)=> editarCampanha(item._id, event)
+                          } className="btn blue"
+                      >
+                          editar
+                      </a>
+                      <a href="#" onClick={(event)=> excluirCampanha(item._id, event)} className="btn red">
+                        remover
+                      </a>
                     </td>
                   </tr>
                 ))}
-                
-                
               </tbody>
             </table>
-
           </div>
         </div>
       </div>
@@ -89,6 +101,5 @@ export default function Email () {
         </div>
       </div>
     </div>
-
   );
 }
