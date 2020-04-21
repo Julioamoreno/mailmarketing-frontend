@@ -1,18 +1,41 @@
 import api from './api';
 
-async function createCampaing(title, conteudo, start, props) {
+async function createCampaing(title, body, start, props, status = 'ativo') {
     try {
-        await api.post("/api/campaign", {title, conteudo, start})
+        await api.post("/api/campaign", {title, body, start, status})
         props.history.push("/email");
     } catch (err) {
         return err;
     }
 }
-async function listCampaing(){
-    const retorno = await api.get("/api/campaign");
-        const data = retorno.data
-        console.log(data)
-        return retorno;
+async function listCampaing(id) {
+    try {
+        const retorno = await api.get(`/api/campaign/${id}`);
+            return retorno;
+    } catch (err) {
+        return err;
+    }
 }
 
-export {createCampaing as default, listCampaing};
+async function editCampaing(title, body, start, props, id) {
+    try {
+        const {status} = await api.put(`/api/campaign/${id}`, {title, body, start})
+        if (status === 200){
+            props.history.push("/email");
+        }
+    } catch (err) {
+        return err;
+    }
+}
+async function deleteCampaing(id, props){
+    try {
+        const {status} = await api.delete(`/api/campaign/${id}`);
+        if(status === 200){
+            props.history.push("/email");
+        }
+    } catch (err) {
+        return err;
+    }
+}
+
+export {createCampaing as default, listCampaing, editCampaing, deleteCampaing};
