@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-
-import api from '../auth/api';
+import { listAllCampaings } from '../auth/email'
 
 export default function Email () { 
   let history = useHistory();
@@ -9,10 +8,9 @@ export default function Email () {
  
   useEffect(() => {
     async function fetchData() {
-      const {data} = await api.get("/api/campaign");
-      setLists(data);
+      const retorno = await listAllCampaings();
+      setLists(retorno);
     }
-
     fetchData();
   },[history]);
 
