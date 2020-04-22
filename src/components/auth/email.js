@@ -8,6 +8,14 @@ async function createCampaing(title, body, start, props, status = 'ativo') {
         return err;
     }
 }
+async function listAllCampaings() {
+    try {
+        const {data} = await api.get(`/api/campaign`);
+            return data;
+    } catch (err) {
+        return err;
+    }
+}
 async function listCampaing(id) {
     try {
         const retorno = await api.get(`/api/campaign/${id}`);
@@ -38,4 +46,4 @@ async function deleteCampaing(id, props){
     }
 }
 
-export {createCampaing as default, listCampaing, editCampaing, deleteCampaing};
+export {createCampaing as default, listAllCampaings, listCampaing, editCampaing, deleteCampaing};
