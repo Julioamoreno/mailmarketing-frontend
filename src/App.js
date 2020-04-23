@@ -13,6 +13,7 @@ import EmailEdit from './components/email/email-edit';
 import EmailRemove from './components/email/email-remove';
 import Listas from './components/lists/lists-list';
 import ListsView from './components/lists/lists-view';
+import Leads from './components/lists/lead';
 
 import TokenProvider from '../src/context/token';
 import { ProtectedRoute } from './components/auth/protect';
@@ -38,6 +39,7 @@ class App extends Component{
           <ProtectedRoute path='/email/remove/:id' component={EmailRemove} />
           <ProtectedRoute exact path='/listas' component={Listas} />
           <ProtectedRoute path='/listas/view/:id' component={ListsView} />
+          <ProtectedRoute path='/lead/:id' component={Leads} />
           <Route path='/*' component={()=> '404 Página não encontrada'} />
         </Switch>
 
