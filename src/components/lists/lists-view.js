@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import listLeads from '../auth/leads';
 import { useHistory } from 'react-router-dom';
-// import { Container } from './styles';
 
 export default function ListsView(props) {
     const [lead, setLead] = useState([]);
@@ -18,11 +17,11 @@ export default function ListsView(props) {
         }
         autofunc();
     }
-    ,[]);
+    ,[history]);
 
     function verLead(_id, e) {
         e.preventDefault();
-        history.push(`/listas/edit/${_id}`);
+        history.push(`/lead/${_id}`);
     }
 
   return (
@@ -51,12 +50,12 @@ export default function ListsView(props) {
                                     {item.lists.map((chip, num)=>(
                                         <div key={num} className="chip">{chip.title}</div>
 
-                                    ))}
-
-                                    
+                                    ))} 
                                 </td>
                                 <td>
-                                    <a href="#" onClick={(event) => verLead(item._id, event)} className="btn">ver</a>
+                                    <a href="#" onClick={(event) => verLead(item._id, event)} className="btn">
+                                        Ver
+                                    </a>
                                 </td>
                             </tr>
                             ))}
