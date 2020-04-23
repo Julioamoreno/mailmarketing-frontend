@@ -8,6 +8,13 @@ async function listLeads(id) {
         return err;
     }
 }
+async function listOneLeads(id) {
+    try {
+        const {data} = await api.get(`/api/leads/${id}`);
+            return data;
+    } catch (err) {
+        return err;
+    }
+}
 
-
-export {listLeads as default}
+export {listLeads as default, listOneLeads}
