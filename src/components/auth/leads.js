@@ -3,9 +3,9 @@ import api from './api';
 async function listLeads(id) {
     try {
         const {data} = await api.get(`/api/leadsbylist/${id}`);
-            return data;
+        return data;
     } catch (err) {
-        return err;
+        return [{err: `Ocorreu um erro ao carregar a página: ${err}`}];
     }
 }
 async function listOneLeads(id) {
