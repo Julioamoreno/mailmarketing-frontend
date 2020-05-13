@@ -1,8 +1,8 @@
 import api from './api';
 
-async function createCampaing(title, body, start, props, status = 'ativo') {
+async function createCampaing(title, body, start, props, lists, status = 'ativo') {
     try {
-        await api.post("/api/campaign", {title, body, start, status})
+        await api.post("/api/campaign", {title, body, start, status, lists});
         props.history.push("/email");
     } catch (err) {
         return err;
@@ -13,7 +13,7 @@ async function listAllCampaings() {
         const {data} = await api.get(`/api/campaign`);
             return data;
     } catch (err) {
-        return err;
+        return [{err: `Ocorreu um erro ao carregar a página: ${err}`}];
     }
 }
 async function listCampaing(id) {
@@ -25,9 +25,9 @@ async function listCampaing(id) {
     }
 }
 
-async function editCampaing(title, body, start, props, id) {
+async function editCampaing(title, body, start, lists, props, id) {
     try {
-        const {status} = await api.put(`/api/campaign/${id}`, {title, body, start})
+        const {status} = await api.put(`/api/campaign/${id}`, {title, body, start, lists})
         if (status === 200){
             props.history.push("/email");
         }
