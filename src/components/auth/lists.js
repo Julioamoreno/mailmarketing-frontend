@@ -10,10 +10,14 @@ async function createCampaing(title, body, start, props, status = 'ativo') {
 }
 async function listAllLists() {
     try {
-        const {data} = await api.get(`/api/lists`);
-            return data;
+        const {data, status} = await api.get(`/api/lists`);
+            if (status === 200) {
+                return data;
+            }else {
+                return [{message: `Erro: ${status}`},{}];
+            }
     } catch (err) {
-        return err;
+        return [{err: `Ocorreu um erro ao carregar a página: ${err}`}];
     }
 }
 async function editList(title, body, start, props, id) {
