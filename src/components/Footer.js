@@ -3,9 +3,9 @@ import './Footer.css';
 
 function Footer(){
     return(
-        <footer id="footer" className="row grey lighten-3">
-            <div className="col s12">
-                <small>by Júlio Armando</small>
+        <footer id="footer" className="row">
+            <div>
+                <p>Desenvolvido por Júlio Armando<span role="img" aria-label="heart">💙</span></p>
             </div>
       </footer>
     );
