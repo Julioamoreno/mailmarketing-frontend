@@ -4,11 +4,10 @@ import { listAllLists } from '../auth/lists';
 
 export default function Lists() {
   let history = useHistory();
-  const [lists, setLists] = useState([]);
+  const [lists, setLists] = useState([{}]);
  
   useEffect(() => {
     async function fetchData() {
-
       const retorno = await listAllLists();
       setLists(retorno);
     }
@@ -22,6 +21,8 @@ export default function Lists() {
 
   return (
     <div className="linha">
+      {(lists[0].err)?
+        lists[0].err : null}
       <div className="col s12">
         <h5>Listas de Disparo</h5>
       </div>
@@ -38,13 +39,20 @@ export default function Lists() {
                 </tr>
               </thead>
               <tbody>
-              {lists.map( (item, index) => (
+              {(lists[0].err)? null :
+                lists.map( (item, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{item.title}</td>
                   <td>{item.quantity}</td>
                   <td>
-                    <a href="#" onClick={(event)=>verLista(item._id, event)} className="btn">ver</a>
+                    <a 
+                      href="#" 
+                      onClick={event => verLista(item._id, event)} 
+                      className="btn"
+                    >
+                        ver
+                    </a>
                   </td>
                 </tr>
               ))}
