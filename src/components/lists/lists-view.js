@@ -4,13 +4,17 @@ import { useHistory } from 'react-router-dom';
 
 export default function ListsView(props) {
     const [lead, setLead] = useState([]);
+    const [mensagem, setMensagem] = useState('');
     let history = useHistory();
     const { id } = props.match.params;
     useEffect(()=>{
         async function autofunc(){
             try {
-                const retorno = await listLeads(id);
-                setLead(retorno);
+                
+                    const retorno = await listLeads(id);
+                    setLead(retorno);
+                    console.log(retorno)
+                
             } catch (err) {
                 console.log(err);
             }
@@ -23,9 +27,9 @@ export default function ListsView(props) {
         e.preventDefault();
         history.push(`/lead/${_id}`);
     }
-
   return (
     <div className="linha">
+        {mensagem}
         <div className="col s12">
             <h5>Exibindo Leads</h5>
         </div>
@@ -36,7 +40,7 @@ export default function ListsView(props) {
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>title</th>
+                                <th>email</th>
                                 <th>listas</th>
                                 <th></th>
                             </tr>
