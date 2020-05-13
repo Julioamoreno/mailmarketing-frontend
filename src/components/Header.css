@@ -4,11 +4,56 @@
     grid-row-end: 1;
     grid-column-start: 1;
     grid-column-end: 6;
-
 }
 
 #header .row {
     margin: 0;
+    height: min(10vh, 300px);
+    min-height: 50px;
+}
 
-    
-  }
+#header .row .brand-logo{
+    padding-bottom: 1.75rem;
+    font-size: min(35px, 4.5vw);
+}
+
+.tooltip{
+    color: #212121;
+    padding-top: 0.5vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px black; /* If you want dots under the hoverable text */
+    max-height: 50px;
+}
+.tooltip:hover{
+    color: #afafaf;
+    background-color:#000;
+
+}
+.tooltip .material-icons {
+    font-size: max(1.7vw, 10px);
+}
+.tooltip:hover .tooltiptext{
+    visibility: visible;
+    font-size: max(1vw, 10px);
+}
+.tooltiptext {
+    visibility: hidden;
+    width: max(150px, 15vw);
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    top: 100%;
+    right: 0%;
+    margin-left: -60px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}

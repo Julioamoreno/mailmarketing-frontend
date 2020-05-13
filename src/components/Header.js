@@ -25,11 +25,8 @@ function Header(props){
           </ul>
           <nav className="row light-blue">
             <div className="nav-wraper col s12">
-              <a href="/" className="brand-logo hide-on-med-and-down">
+              <a href="/" className="brand-logo">
                 Digital Marketing
-              </a>
-              <a href="/" className="brand-logo hide-on-large-only">
-                DM
               </a>
       
               {notificaçao}  {/* é checado se o usuario está logado */}
