@@ -1,4 +1,6 @@
+
 #header {
+    --alturaBarra: min(10vh, 300px);
     display: inline-grid;
     grid-row-start: 1;
     grid-row-end: 1;
@@ -8,7 +10,7 @@
 
 #header .row {
     margin: 0;
-    height: min(10vh, 300px);
+    height: var(--alturaBarra);
     min-height: 50px;
 }
 
@@ -26,7 +28,7 @@
     position: relative;
     display: inline-block;
     border-bottom: 1px black; /* If you want dots under the hoverable text */
-    max-height: 50px;
+    max-height: var(--alturaBarra);
 }
 .tooltip:hover{
     color: #afafaf;
@@ -34,7 +36,7 @@
 
 }
 .tooltip .material-icons {
-    font-size: max(1.7vw, 10px);
+    font-size: max(1.7vw, 20px);
 }
 .tooltip:hover .tooltiptext{
     visibility: visible;
@@ -49,10 +51,9 @@
     padding: 5px 0;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    top: 100%;
+    top: var(--alturaBarra);
     right: 0%;
     margin-left: -60px;
-
     /* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 1;

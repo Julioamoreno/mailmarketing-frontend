@@ -10,11 +10,8 @@ export default function ListsView(props) {
     useEffect(()=>{
         async function autofunc(){
             try {
-                
-                    const retorno = await listLeads(id);
-                    setLead(retorno);
-                    console.log(retorno)
-                
+                const retorno = await listLeads(id);
+                setLead(retorno);  
             } catch (err) {
                 console.log(err);
             }

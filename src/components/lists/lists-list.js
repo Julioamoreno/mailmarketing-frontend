@@ -4,7 +4,7 @@ import { listAllLists } from '../auth/lists';
 
 export default function Lists() {
   let history = useHistory();
-  const [lists, setLists] = useState([{}]);
+  const [lists, setLists] = useState([]);
  
   useEffect(() => {
     async function fetchData() {
@@ -20,13 +20,11 @@ export default function Lists() {
   }
 
   return (
-    <div className="linha">
-      {(lists[0].err)?
-        lists[0].err : null}
-      <div className="col s12">
+    <div className="conteudo">
+      <div className="titulo-conteudo">
         <h5>Listas de Disparo</h5>
       </div>
-      <div className="col s12">
+      <div className="lists-panel">
         <div className="card">
           <div className="card-content">
             <table>
@@ -39,7 +37,7 @@ export default function Lists() {
                 </tr>
               </thead>
               <tbody>
-              {(lists[0].err)? null :
+              {
                 lists.map( (item, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>

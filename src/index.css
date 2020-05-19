@@ -2,6 +2,7 @@
 
 #root{
   display: grid;
+  grid-template-columns: 160px auto auto auto auto;
 }
 
 body{
