@@ -1,28 +1,27 @@
-@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 
-#root{
-  display: grid;
-  grid-template-columns: 160px auto auto auto auto;
+#root {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto;
 }
 
-body{
-  background-color: #fafafa;
+body {
+	background-color: #fafafa;
 }
 
-#page{
-  display: inline;
-  min-height: 100vh;
-  flex-direction: column;
-
+#page {
+	display: inline;
+	min-height: 100vh;
+	flex-direction: column;
 }
-.row{
-  margin: 0;
+.row {
+	margin: 0;
 }
 
-main{
-  flex: 1 0 auto;
+main {
+	flex: 1 0 auto;
 }
 
 #content .row {
-  margin: 0;
+	margin: 0;
 }
